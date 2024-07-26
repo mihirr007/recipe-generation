@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="__variable_5849fd __variable_7b4d80 scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  {% load static %}
+  <link rel="preload" href="{% static 'media/05671187b3ec025d-s.p.woff2' %}" as="font" crossorigin="" type="font/woff2" />
+  <link rel="preload" href="{% static 'media/6245472ced48d3be-s.p.woff2' %}" as="font" crossorigin="" type="font/woff2" />
+  <link rel="preload" href="{% static 'media/8888a3826f4a3af4-s.p.woff2' %}" as="font" crossorigin="" type="font/woff2" />
+  <link rel="preload" href="{% static 'media/b957ea75a84b6ea7-s.p.woff2' %}" as="font" crossorigin="" type="font/woff2" />
+  <link rel="preload" href="{% static 'media/eafabf029ad39a43-s.p.woff2' %}" as="font" crossorigin="" type="font/woff2" />
+  <link rel="preload" as="image" href="{% static 'media/bg.8c036711.png' %}" fetchpriority="high" />
+  <link rel="preload" as="image" href="{% static 'media/app.6e1d163c.png' %}" fetchpriority="high" />
+  <link rel="preload" as="image" href="{% static 'media/ingredients.3199ac8f.png' %}" fetchpriority="high" />
+  <link rel="preload" as="image" href="{% static 'media/instructions.360e3d2a.png' %}" fetchpriority="high" />
+  <link rel="preload" as="image" href="{% static 'media/time.4b424843.png' %}" fetchpriority="high" />
+  <link rel="stylesheet" href="{% static 'css/af2c5844081be271.css' %}" data-precedence="next" />
+  <link rel="stylesheet" href="{% static 'css/41a551902bb358a5.css' %}" data-precedence="next" />
+  <title>Home | EcoChef</title>
+  <link rel="icon" href="{% static 'favicon-16x16.png' %}" />
+  <link rel="icon" href="{% static 'favicon-32x32.png' %}" />
+    <style>
+        .img1 {
+            width: 22%;
+            height: 20%;
+            border-radius: 5px;
+            text-align: center;
+            display: block;
+            margin: auto;
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2); /* Light-colored shadow for dark background */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for zoom and shadow */
+        }
+
+        .img1:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
+            box-shadow: 0px 8px 16px rgba(34, 197, 94, 0.6); /* Light green shadow on hover */
+        }
+
+        .new{
+            padding-top: 1rem;
+            padding-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body class="__className_5849fd">
+  <script>
+    !function() {
+      try {
+        var d = document.documentElement, n = 'data-theme', s = 'setAttribute';
+        var e = localStorage.getItem('theme');
+        if ('system' === e || (!e && true)) {
+          var t = '(prefers-color-scheme: dark)', m = window.matchMedia(t);
+          if (m.media !== t || m.matches) {
+            d.style.colorScheme = 'dark';
+            d[s](n, 'dark')
+          } else {
+            d.style.colorScheme = 'light';
+            d[s](n, 'light')
+          }
+        } else if (e) {
+          d[s](n, e || '')
+        }
+        if (e === 'light' or e === 'dark') d.style.colorScheme = e
+      } catch (e) {}
+    }()
+  </script>
+  <div class="border-b-2 border-base-300">
+    <div class="navbar justify-between py-4 max-w-7xl mx-auto">
+      <a class="btn btn-ghost normal-case">
+        <img alt="Flavorish logo" loading="lazy" width="195" height="312" decoding="async" data-nimg="1" class="w-auto h-full" style="color:transparent" src="{% static 'media/icon.4708fc5d.svg' %}" />
+        <p class="font-poppins text-2xl font-normal">EcoChef</p>
+      </a>
+      <div class="flex items-center gap-4 max-lg:hidden">
+        {% if user.is_authenticated %}
+          <a class="btn btn-primary" href="{% url 'logout' %}">Log Out</a>
+        {% else %}
+          <a class="btn btn-primary" href="{% url 'login' %}">Log In</a>
+        {% endif %}
+      </div>
+      <div class="lg:hidden">
+        <div class="btn btn-ghost">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <label class="btn btn-ghost" for="header-drawer">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+          </svg>
+        </label>
+      </div>
+    </div>
+    <div class="drawer drawer-end z-50 lg:hidden">
+      <input id="header-drawer" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-side">
+        <label for="header-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+        <div class="w-80 min-h-full bg-base-100 p-4">
+          <a class="btn btn-ghost normal-case flex flex-col flex-nowrap w-full h-full mb-8" href="index.html">
+            <img alt="Flavorish logo" loading="lazy" width="195" height="312" decoding="async" data-nimg="1" class="w-16" style="color:transparent" src="{% static 'media/icon.4708fc5d.svg' %}" />
+            <p class="font-poppins text-2xl font-normal">Flavorish</p>
+          </a>
+          <ul class="menu menu-lg menu-vertical">
+            <li><a href="index.html#features">Features</a></li>
+            <li></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li></li>
+            <li><a href="index.html#FAQ">FAQ</a></li>
+            <li></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+          <div class="flex justify-center items-center gap-4 mt-8">
+            {% if user.is_authenticated %}
+              <a class="btn btn-primary" href="{% url 'logout' %}">Log Out</a>
+            {% else %}
+              <a class="btn btn-primary" href="{% url 'signup' %}">Sign up</a>
+              <a class="btn btn-neutral" href="{% url 'login' %}">Login</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main>
+    <div class="overflow-hidden">
+      <div class="max-w-md sm:max-w-xl lg:max-w-7xl mx-auto lg:flex xl:items-center py-16 xl:py-0 3xl:py-16">
+        <div class="relative z-10 flex flex-col items-center lg:items-start lg:w-[60%] lg:flex-shrink-0 lg:max-w-2xl 2xl:max-w-4xl mb-8 px-4 lg:py-16 xl:py-32">
+          <h1 class="font-poppins font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl text-center lg:text-left mb-4">Cooking made easy <span class="ai-gradient-text">with Tech</span></h1>
+          <p class="md:text-lg text-center lg:text-left lg:max-w-lg mb-8">Have ingredients at home but can't decide what to cook?</p>
+          <div class="flex flex-col gap-2">
+              <a class="btn btn-primary" href="{% url 'try_now' %}">Try it Now!</a>
+          </div>
+        </div>
+        <div class="relative lg:w-[50%] lg:min-w-[50%] lg:-ml-[10%] 2xl:-ml-[5%] pt-[20%] pb-[10%] xl:pt-[10%] lg:pb-0">
+            <img alt="" aria-hidden="true" fetchpriority="high" width="2112" height="1992" decoding="async" data-nimg="1" class="absolute top-0 left-[1%] sm:left-0 xl:left-20 object-contain" style="color:transparent; width: 140%; height: auto;" src="{% static 'bg0549.png' %}" />
+            <img alt="" width="800" height="675" style="transform: translateX(3%); scale(0.8); position: relative; z-index: 20; transition: all 0.2s ease-in; opacity: 1;" src="{% static 'appae44.png' %}">
+          <img alt="Ingredients card" fetchpriority="high" width="596" height="356" decoding="async" data-nimg="1" class="absolute top-0 lg:top-[10%] xl:top-0 left-4 lg:left-[20%] xl:left-auto xl:-right-[5%] w-[55%] z-0 transition-all ease-in duration-500 opacity-100 -translate-y-1 delay-[400ms]" style="color:transparent" src="{% static 'ingredients730c.png' %}" />
+        </div>
+      </div>
+    </div>
+    <div id="features" class="relative overflow-hidden">
+
+      <div class="max-w-7xl mx-auto z-10 py-24">
+        <div class="flex flex-col items-center px-4">
+          <h2 class="text-center font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-4 lg:mb-12">Smart <span class="ai-gradient-text">features</span></h2>
+          <div class="flex flex-col md:grid md:grid-cols-3 gap-4 md:gap-12">
+            <div class="text-center md:text-left">
+              <div class="flex justify-center md:justify-start mb-4">
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-center">Smart matching of ingredients to recipes</h3>
+              <p class="md:text-lg text-center" style="margin-bottom: 20px">Our algorithm ensures that the recipes you get are tailored to the ingredients you have on hand.</p>
+                <img src="{% static 'img1.jpg' %}" alt="Ingredients Matching" class="img1">
+            </div>
+            <div class="text-center md:text-left">
+              <div class="flex justify-center md:justify-start mb-4">
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-center">Step-by-step instructions</h3>
+              <p class="md:text-lg text-center" style="margin-bottom: 20px">Easy to follow instructions to ensure that your meals come out perfectly every time.</p>
+                <img src="{% static 'img2.jpg' %}" alt="Ingredients Matching" class="img1">
+            </div>
+            <div class="text-center md:text-left">
+              <div class="flex justify-center md:justify-start mb-4">
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-center">Nutritional information</h3>
+              <p class="md:text-lg text-center" style="margin-bottom: 20px">Get detailed nutritional information for each recipe to help you make healthier choices.</p>
+                <img src="{% static 'img3.jpg' %}" alt="Ingredients Matching" class="img1" style="margin-bottom: 30px">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="FAQ" class="relative overflow-hidden new">
+
+      <div class="max-w-7xl mx-auto z-10 py-24">
+        <div class="flex flex-col items-center px-4">
+          <h2 class="text-center font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-4 lg:mb-12" style="margin-bottom: 10px">Frequently Asked <span class="ai-gradient-text">Questions</span></h2>
+          <div class="flex flex-col items-center w-full">
+            <div class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full mb-4">
+              <input type="checkbox" />
+              <div class="collapse-title text-xl font-medium">
+                How does EcoChef work?
+              </div>
+              <div class="collapse-content">
+                <p>EcoChef uses advanced algorithms to match the ingredients you have on hand with a vast database of recipes. You can get recipe suggestions based on what you have and follow step-by-step instructions to prepare your meals.</p>
+              </div>
+            </div>
+            <div class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full mb-4">
+              <input type="checkbox" />
+              <div class="collapse-title text-xl font-medium">
+                Is EcoChef free?
+              </div>
+              <div class="collapse-content">
+                <p>EcoChef is totally free for any user; just signup is required.</p>
+              </div>
+            </div>
+            <div class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full mb-4">
+              <input type="checkbox" />
+              <div class="collapse-title text-xl font-medium">
+                How EcoChef is innovative?
+              </div>
+              <div class="collapse-content">
+                <p>EcoChef significantly enhances the meal preparation process by allowing users to input specific dietary preferences, allergies, available preparation time, and nutritional targets.</p>
+              </div>
+            </div>
+            <div class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full mb-4">
+              <input type="checkbox" />
+              <div class="collapse-title text-xl font-medium">
+                Can I use EcoChef on my mobile device?
+              </div>
+              <div class="collapse-content">
+                <p>Yes, EcoChef is available on mobile device. Our website is responsive.</p>
+              </div>
+            </div>
+            <div class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full mb-4">
+              <input type="checkbox" />
+              <div class="collapse-title text-xl font-medium">
+                How do I sign up for EcoChef?
+              </div>
+              <div class="collapse-content">
+                <p>You can sign up for EcoChef on our website. Simply create an account and start exploring recipes tailored to your ingredients.</p>
+              </div>
+            </div>
+            {% if not user.is_authenticated %}
+              <a class="btn btn-primary" href="{% url 'signup' %}">Sign up</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="relative overflow-hidden">
+      <div class="max-w-3xl mx-auto z-4 py-24">
+        <div class="flex flex-col items-center px-4">
+          <h2 class="text-center font-bold text-2xl sm:text-5xl md:text-4xl lg:text-1xl xl:text-4xl mb-2 lg:mb-12">Made with ❤️ by <span class="ai-gradient-text">Group 8</span></h2>
+          <div class="flex items-center gap-4">
+            <a target="_blank" href="https://www.uwindsor.ca/">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
+
+

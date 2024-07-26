@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate a recipe | EcoChef</title>
+    <style>
+        body {
+            background-color: #121212;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100dvh;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card {
+            background: #0B0909;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            height: 97%;
+            width: 100%;
+            padding-top: 2px;
+            {#margin-top: 20px;#}
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            height: 24px;
+            margin-right: 8px;
+        }
+
+        .brand {
+            font-size: 24px;
+            margin: 0;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px -4px;
+        }
+
+        .step {
+            width: 24%;
+            padding: 10px;
+            text-align: center;
+            background: #333333;
+            border-radius: 8px;
+            margin: 4px;
+        }
+
+        .step.completed {
+            background: #22c55e;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 40px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #444444;
+            border-radius: 4px;
+            background: #2e2e2e;
+            color: #ffffff;
+        }
+
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            padding: 10px 330px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        .btn-neutral {
+            background-color: #555555;
+        }
+
+        .btn-primary {
+            background-color: #22c55e;
+        }
+
+        #ingbox{
+            width: 1399px;
+            padding: 13px;
+            margin-bottom: 10px;
+            margin-left: 2px;
+        }
+
+        #headerHeading{
+            text-align: left;
+            font-size: 120%;
+        }
+
+        #headerHeading1{
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+
+        #hrHeading{
+            font-weight: lighter;
+        }
+
+        #gen{
+            margin-left: 3px;
+        }
+
+        #ing{
+            margin-left: 3px;
+            font-size: 150%;
+        }
+
+        #spa{
+            margin-top: 2px;
+        }
+
+        #aHeader{
+            color: white;
+            text-decoration: none;
+        }
+
+        #logo{
+            width: 18px;
+        }
+
+        /* Add this new CSS for the logout button */
+        .btn-logout {
+            padding: 11px 12px;
+            background-color: #22c55e;
+            color: black;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: medium;
+            font-weight: 700;
+            position: absolute;
+            right: 50px;
+            top: 24px;
+        }
+
+    </style>
+</head>
+<body class="min-h-dvh bg-dark">
+    {% load static %}
+    <div class="container">
+        <div class="card">
+            <header id="headerHeading">
+                <a id="aHeader" href="/">
+                    <h1 id="headerHeading1">
+                        <img src="{% static 'logo.svg' %}" alt="" id="logo">
+                        EcoChef
+                    </h1>
+                </a>
+                <button type="button" class="btn btn-logout" onclick="logout()">Log Out</button>
+                <hr id="hrHeading">
+            </header>
+
+            <div id="gen">
+{#                <button class="back-button" onclick="navigateToPreviousPage()">#}
+{#                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="20" width="20" xmlns="http://www.w3.org/2000/svg">#}
+{#                        <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"></path>#}
+{#                    </svg>#}
+{#                </button>#}
+                <h1>Generate a Recipe</h1>
+            </div>
+            <div class="steps">
+                <div class="step completed">1</div>
+                <div class="step">2</div>
+                <div class="step">3</div>
+                <div class="step">4</div>
+            </div>
+            <form method="post" class="form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="ingredients" id="ing">Ingredients</label>
+                    <input type="text" id="ingbox" name="ingredients" placeholder="Ingredient name" required>
+                    <span id="spa">Separate ingredients by comma</span>
+                </div>
+                <div class="form-buttons">
+                    <button type="button" class="btn btn-neutral" onclick="redirectToScreen2()">Back</button>
+                    <button type="submit" class="btn btn-primary">Continue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            window.location.href = '{% url "logout" %}'; // Adjust URL as needed for your Django routing
+        }
+
+        function redirectToScreen2() {
+            window.location.href = '{% url 'home' %}';
+        }
+        function navigateToPreviousPage() {
+            window.location.href = 'new_index.html';
+        }
+    </script>
+</body>
+</html>
