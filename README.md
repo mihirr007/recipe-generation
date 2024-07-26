@@ -2,7 +2,13 @@
 
 This project is a Django-based web application that integrates a machine learning model for generating recipes based on a list of ingredients. The model, fine-tuned from the T5-small architecture, is hosted on Hugging Face and utilizes the RecipeNLG dataset for training.
 
-![Homepage](https://github.com/mihirr007/recipe-generation/blob/main/ecochefmain/appecochef/templates/appecochef/img/components/layout/CTA/Screenshot%20(122).png)
+![Homepage](https://github.com/mihirr007/recipe-generation/blob/main/ecochefmain/appecochef/templates/appecochef/img/components/layout/CTA/ecochef_demo.png)
+![Homepage](https://github.com/mihirr007/recipe-generation/blob/main/ecochefmain/appecochef/templates/appecochef/img/components/layout/CTA/Screenshot%20(126).png)
+![Homepage](https://github.com/mihirr007/recipe-generation/blob/main/ecochefmain/appecochef/templates/appecochef/img/components/layout/CTA/Screenshot%20(127).png)
+![Homepage](https://github.com/mihirr007/recipe-generation/blob/main/ecochefmain/appecochef/templates/appecochef/img/components/layout/CTA/Screenshot%20(128).png)
+![Homepage](https://github.com/mihirr007/recipe-generation/blob/main/ecochefmain/appecochef/templates/appecochef/img/components/layout/CTA/Img%20(9).png)
+![Homepage](https://github.com/mihirr007/recipe-generation/blob/main/ecochefmain/appecochef/templates/appecochef/img/components/layout/CTA/Img%20(10).png)
+
 
 
 ## Features
