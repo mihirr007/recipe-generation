@@ -25,6 +25,29 @@ This project is a Django-based web application that integrates a machine learnin
 
 ## Installation
 
+**Clone the Hugging Face Repository**:
+- git clone https://huggingface.co/raddus/ecochef-recipe-generation
+
+**Move the Cloned Repository**:
+- Place the ecochef-recipe-generation folder into the appecochef directory of your Django project. The final structure should be:
+ECOCHEF/
+├── ecochefmain/
+│   ├── appecochef/
+│   │   └── ecochef-recipe-generation/
+│   │       ├── admin.py
+│   │       ├── apps.py
+│   │       ├── forms.py
+│   │       ├── models.py
+│   │       ├── tests.py
+│   │       ├── urls.py
+│   │       ├── utils.py
+│   │       └── views.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── manage.py
+
 ### Prerequisites
 
 - Python 3.7 or higher
